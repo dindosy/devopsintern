@@ -17,7 +17,7 @@ This repository includes a CI pipeline configured using GitHub Actions. The pipe
 
 ## CI Pipeline
 
-# Workflow Configuration
+### Workflow Configuration
 
 -Trigger: The pipeline is triggered on `push` or `pull_request` events to the `main` branch.
 - Build Step: 
@@ -26,12 +26,12 @@ This repository includes a CI pipeline configured using GitHub Actions. The pipe
 - Deployment Step:
   - If the build and tests are successful, the code is automatically deployed to the staging environment.
 
-# Deployment
+### Deployment
 
 - Deployment is configured to run after a successful build.
 - Ensure the appropriate deployment script/commands are included to handle the actual deployment process.
 
-# Usage
+### Usage
 
 To trigger the CI/CD pipeline:
 1. Push changes to the `main` branch or open a pull request against the `main` branch.
