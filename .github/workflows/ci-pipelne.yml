@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@main
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node
+        uses: actions/setup-node@v3
         with:
           node-version: '20'  # Update to Node.js 20
 
@@ -36,16 +36,17 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@main
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@main
+        uses: actions/setup-node@v3
         with:
           node-version: '20'  # Update to Node.js 20
 
       - name: Install dependencies
         run: npm install
 
-      - name: Deploy to staging
-        run: |
-          npm run deploy-staging
+      - name: Deploy to S3 #staging on AWS cloud service
+        run: 
+          aws s3 sync ./build s3://my-staging-bucket --delete
+
